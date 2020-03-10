@@ -15,5 +15,5 @@
 Уcmake -G "MinGW Makefiles" -D CMAKE_BUILD_TYPE=Release ..Ф  
 Уmingw32-makeФ
 
-(генерацию Makefile дл€ других компил€торов см. в справке cmake Цhelp, описание ключа -G).
+(генерацию Makefile дл€ других компил€торов см. в справке cmake Цhelp, описание ключа -G).  
 ѕосле успешной сборки р€дом с исходным кодом в каталоге build по€витс€ исполн€емый файл УWindowChat.exeФ.
