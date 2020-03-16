@@ -27,7 +27,7 @@ private:
         QString MyName = "green";
         QString OtherName = "red";
         QString Text = "black";
-    } COLOR_FONT;
+    } const COLOR_FONT;
 
     Ui::ClientChat *ui;
     ServerChat *server;

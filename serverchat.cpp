@@ -39,6 +39,7 @@ void ServerChat::on_pb_register_user_clicked()
 
     ui->comboBox->addItem(name);
     ui->le_login->clear();
+    ui->le_login->setFocus();
     activateWindow();
 }
 
