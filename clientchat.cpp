@@ -28,8 +28,8 @@ void ClientChat::on_pb_send_msg_clicked()
     QStringList list;
     list.append(name);
     list.append(ui->te_send_msg->toPlainText());
-
     server->send_message(list);
+
     ui->te_send_msg->clear();
     ui->te_send_msg->setFocus();
 }
