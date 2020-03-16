@@ -57,7 +57,7 @@ void ServerChat::send_message(const QStringList& msg)
     msg_str.append(cur_time);
     message_base.append(msg_str);
 
-    emit new_msg(msg);
+    emit new_msg(msg_str);
 }
 
 void ServerChat::delete_user_online(const QString& name)
