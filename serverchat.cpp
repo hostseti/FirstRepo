@@ -30,6 +30,7 @@ void ServerChat::on_pb_register_user_clicked()
     }
 
     QSharedPointer<ClientChat> p_user(new ClientChat(name, this));
+
     connect(this, &ServerChat::new_msg, p_user.get(), &ClientChat::update_message);
 
     users_online.insert(name, p_user);

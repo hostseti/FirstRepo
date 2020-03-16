@@ -39,6 +39,7 @@ void ClientChat::update_message(const QStringList& str_msg)
     //Note: str_msg[0] = name, str_msg[1] = text, str_msg[2] = date
 
     QString color_font = (str_msg[0] == name) ? COLOR_FONT.MyName : COLOR_FONT.OtherName;
+
     auto& text = const_cast<QString&>(str_msg[1]);
     text.replace("\n", "<br>");
 
