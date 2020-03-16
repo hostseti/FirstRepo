@@ -49,8 +49,13 @@ void ServerChat::on_pb_remove_user_clicked()
 
 void ServerChat::send_message(const QStringList& msg)
 {
-    if(msg[2].isEmpty()) return;
-    message_base.append(msg);
+    if(msg[1].isEmpty()) return;
+
+    auto& msg_str = const_cast<QStringList&>(msg);
+    QString cur_time = QDateTime::currentDateTime().toString("dd MMMM yyyy hh:mm:ss");
+    msg_str.append(cur_time);
+    message_base.append(msg_str);
+
     emit new_msg(msg);
 }
 

@@ -26,9 +26,7 @@ ClientChat::~ClientChat()
 void ClientChat::on_pb_send_msg_clicked()
 {
     QStringList list;
-    QString cur_time = QDateTime::currentDateTime().toString("dd MMMM yyyy hh:mm:ss");
     list.append(name);
-    list.append(cur_time);
     list.append(ui->te_send_msg->toPlainText());
 
     server->send_message(list);
@@ -38,14 +36,14 @@ void ClientChat::on_pb_send_msg_clicked()
 
 void ClientChat::update_message(const QStringList& str_msg)
 {
-    //Note: str_msg[0] = name, str_msg[1] = date, str_msg[2] = text
+    //Note: str_msg[0] = name, str_msg[1] = text, str_msg[2] = date
 
     QString color_font = (str_msg[0] == name) ? COLOR_FONT.MyName : COLOR_FONT.OtherName;
-    auto& text = const_cast<QString&>(str_msg[2]);
+    auto& text = const_cast<QString&>(str_msg[1]);
     text.replace("\n", "<br>");
 
     ui->te_common_msg->insertHtml(QString("<font color=%3>%1 [%2]:</font><br>")
-                                  .arg(str_msg[0]).arg(str_msg[1]).arg(color_font));
+                                  .arg(str_msg[0]).arg(str_msg[2]).arg(color_font));
 
     ui->te_common_msg->insertHtml(QString("<font color=%2>%1</font><br><br>")
                                   .arg(text).arg(COLOR_FONT.Text));
